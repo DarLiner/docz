@@ -9,22 +9,21 @@ import Alert from './Alert.vue'
 # Alert
 
 ## Properties
-
-<PropsTable of={Alert} />
+<PropsTable of={<VueWrapper component={Alert}>Some message</VueWrapper>} />
 
 ## Basic usage
 
 <Playground>
-  <Alert>Some message</Alert>
+  <VueWrapper component={Alert}>Some message</VueWrapper>
 </Playground>
 
 ## Using different kinds
 
 <Playground>
-  <Alert kind="info">Some message</Alert>
-  <Alert kind="positive">Some message</Alert>
-  <Alert kind="negative">Some message</Alert>
-  <Alert kind="warning">Some message</Alert>
+  <VueWrapper component={Alert} kind="info">Some message</VueWrapper>
+  <VueWrapper component={Alert} kind="positive">Some message</VueWrapper>
+  <VueWrapper component={Alert} kind="negative">Some message</VueWrapper>
+  <VueWrapper component={Alert} kind="warning">Some message</VueWrapper>
 </Playground>
 
 ## Use with children as a function
@@ -34,7 +33,7 @@ import Alert from './Alert.vue'
     const message = 'Hello world'
 
     return (
-      <Alert>{message}</Alert>
+      <VueWrapper component={Alert}>{message}</VueWrapper>
     )
   }}
 </Playground>
