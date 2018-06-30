@@ -1,14 +1,7 @@
 import { createPlugin } from 'docz-core'
 import { VueLoaderPlugin } from 'vue-loader'
 
-interface BabelRC {
-  presets?: any[]
-  plugins?: any[]
-  cacheDirectory?: boolean
-  babelrc?: boolean
-}
-
-export const doczPluginVue = () =>
+export const vue = () =>
   createPlugin({
     modifyBabelRc: (babelrc: BabelRC): BabelRC => {
       if (babelrc.plugins === undefined) {
