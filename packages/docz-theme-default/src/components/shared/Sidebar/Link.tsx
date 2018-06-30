@@ -86,6 +86,8 @@ const isSmallLinkActive = (slug: string) => (m: any, location: any) =>
 
 interface LinkProps extends BaseLinkProps {
   doc: Entry
+  onClick: (ev: React.SyntheticEvent<any>) => void
+  to: string
 }
 
 export const Link: SFC<LinkProps> = ({ doc, onClick, ...props }) => {
