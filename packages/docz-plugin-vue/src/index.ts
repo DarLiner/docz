@@ -1,17 +1,9 @@
 import { createPlugin } from 'docz-core'
 import { VueLoaderPlugin } from 'vue-loader'
+import webpack from 'webpack'
 
 export const vue = () =>
   createPlugin({
-    modifyBabelRc: (babelrc: BabelRC): BabelRC => {
-      if (babelrc.plugins === undefined) {
-        babelrc.plugins = []
-      }
-      babelrc.plugins.push('vuera/babel')
-      babelrc.babelrc = true
-      return babelrc
-    },
-
     modifyBundlerConfig: config => {
       config.module.rules.push({
         test: /\.vue$/,
@@ -26,6 +18,10 @@ export const vue = () =>
       })
 
       config.plugins.push(new VueLoaderPlugin())
+
+      config.plugins.push(new webpack.ProvidePlugin({
+        'VueWrapper': ["vuera", "VueWrapper"]
+      }))
 
       return config
     },

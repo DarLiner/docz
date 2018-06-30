@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "docz-core": "^0.3.2",
+    "webpack": "^4.12.1",
     "vuera": "^0.2.2"
   },
   "devDependencies": {
