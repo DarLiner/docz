@@ -19,9 +19,11 @@ export const vue = () =>
 
       config.plugins.push(new VueLoaderPlugin())
 
-      config.plugins.push(new webpack.ProvidePlugin({
-        'VueWrapper': ["vuera", "VueWrapper"]
-      }))
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          VueWrapper: ['vuera', 'VueWrapper'],
+        })
+      )
 
       return config
     },
