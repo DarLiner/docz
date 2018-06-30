@@ -7,8 +7,8 @@
     "build": "docz build"
   },
   "dependencies": {
-    "docz": "^0.3.2",
-    "docz-core": "^0.3.2",
+    "docz": "^0.4.0",
+    "docz-core": "^0.4.0",
     "docz-plugin-vue": "^0.1.0"
   }
 }
